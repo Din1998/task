@@ -1,0 +1,185 @@
+.faq-section{
+    position: relative;
+
+    // .circle1{
+    //     position: absolute;
+    //     top: 10%;
+    //     right: -10%;
+    //     height: 400px;
+    //     width: 400px;
+    //     background-color:  rgb(181, 226, 226);
+    //     filter: blur(80px);
+    //     -webkit-filter: blur(80px);
+    //     border-radius: 50%;
+    //   }
+      .circle2{
+          position: absolute;
+          height: 200px;
+          width: 200px;
+          background-color:rgb(243, 230, 248);
+          filter: blur(80px);
+          -webkit-filter: blur(80px);
+          border-radius: 50%;
+          bottom: -10%;
+      }
+
+    .testimonial-card-wraper{
+        padding-top: 100px !important;
+        .testimonial-card_body{
+            height: 100%;
+            width: 400px;
+            background-color:  hsl(var( --base));
+            border-radius: 8px;
+    
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            .testimonial-img{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                top: -100px;
+                height: 160px;
+                width: 160px;
+                height: 100%;
+                width: 100%;
+                img{
+                    border-radius: 50%;
+                    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+                    height: 160px;
+                    width: 160px;
+                    border: 3px solid hsl(var( --base));
+                    object-fit: cover;
+                }
+            }
+    
+            .testimonial-profile_info{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding-top: 84px;
+                h6 {
+                    margin-bottom: 12px;
+                    font-size: 23px;
+                }
+                p {
+                    font-weight: 600;
+                    color: hsl(var(--base));
+                }
+            }
+    
+            .testimonial-content{
+                padding: 30px;
+                padding-top: 20px;
+                text-align: center;
+            }
+        }
+    }
+    
+    .swiper-wrapper{
+        width: 460px !important;
+        .swiper-slide{
+           
+    
+            .swiper-slide-shadow{
+                background-color: transparent;
+            }
+        }
+    }
+    
+    .mySwiper{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.faq-thumb{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: none;
+    }
+}
+
+// .faq-right-content{
+//     height: 100%;
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+.faq-section-thumb{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 470px;
+     img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+     }
+  }
+  
+.faq-section-tag--img{
+    position: absolute;
+    top: 140px;
+    height: 184px;
+    width: 240px;
+    right: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 12px;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border: 4px solid hsl(var(--white));
+      border-radius: 12px;
+    }
+  }
+  
+  .faq-section-tag{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    bottom: 80px;
+    right: 80px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 16px;
+    background: hsl(var(--white));
+    color: hsl(var(--base));
+    border-radius: 12px;
+    .tag-text-content{
+      color: hsl(var(--base));
+    }
+  }
+
+
+  @media(max-width:1025px){
+    .faq-section-thumb{
+        height: 528px;
+      }
+  }
+
+  @media(max-width:426px){
+    .faq-section-thumb{
+        height: 460px;
+         img{
+          height: 100%;
+          width: 100%;
+         }
+      }
+  }

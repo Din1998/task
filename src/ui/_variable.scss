@@ -1,0 +1,1443 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/*================ Css Variables Start ===============*/
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+
+  :root {    
+    /* === Font Family === */
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Poppins', sans-serif;
+    
+    /* === TypoGraphy ===*/
+    --heading-one: clamp(1.5rem, 2.8vw + 1rem, 3.75rem); //Min:24px - Max:60px
+    --heading-two: clamp(1.375rem, 1.7vw + 1rem, 2.5rem); //Min: 22px - Max: 40px
+    --heading-three: clamp(1.25rem, .8vw + 1rem, 1.875rem); //Min: 20px - Max: 30px
+    --heading-four: clamp(1.125rem, .5vw + 1rem, 1.5rem); //in: 18px - Max: 24px
+    --heading-five: clamp(1.0625rem, .3vw + 1rem, 1.25rem); //in: 17px - Max: 20px
+    --heading-six: 1.2rem;
+  
+  /* ======================== Color Variables Start ===========================*/
+     /*== White Color ==*/
+     --white: 0 0% 100%;
+     
+    /*== Light Color ==*/                         
+    --light-h: 0;
+    --light-s: 0%;
+    --light-l: 78%;
+    --light: var(--light-h) var(--light-s) var(--light-l);
+    
+    /*== Black Color ==*/
+    --black-h: 0;
+    --black-s: 0%;
+    --black-l: 0%;
+    --black: var(--black-h) var(--black-s) var(--black-l);
+    
+    --heading-color: 0,0%,0%;
+    --body-color: 0, 0%, 0%;
+    --border-color: 0 0% 88%;
+    // --background: 213 100% 14%;
+
+    /*================================ Border-radius ===============================*/
+    --border-radius: 16px;
+    --border-radius-sm: 4px;
+
+
+    /*================================ Box Shadow Start ===============================*/
+    // Header Box shadow
+    --header-box-shadow: 0px -1px 15px 3px hsl(var(--black) /.3); 
+   // Mobile bottom fix menu box shadow 
+    --mobile-box-shadow: 0px -1px 5px 0px hsl(var(--black) /.92);
+    // Card box shadow
+    --box-shadow: 0px 2px 15px hsl(var(--black) /.05);
+
+
+    /* ================================ Base Light Color =============================== */
+
+    --base-light-h: 152;
+    --base-light-s:100%;
+    --base-light-l: 50%;
+    --base-light: var(--base-light-h) var(--base-light-s) var(--base-light-l);
+
+    /*========================= Base component Color =============================*/
+             
+    --base-component-h: 213;  
+    --base-component-s: 100%;
+    --base-component-l: 17%;
+    --base-component: var(--base-component-h) var( --base-component-s) var(--base-component-l);
+
+    /*========================= Base Color =============================*/
+    --base-h: 47;
+    --base-s: 95%;
+    --base-l: 67%;  
+    --base: var(--base-h) var( --base-s) var(--base-l);
+
+    /*== Base Darken ==*/
+    --base-d-100: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.1);
+    --base-d-200: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.2);
+    --base-d-300: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.3);
+    --base-d-400: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.4);
+    --base-d-500: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.5);
+    --base-d-600: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.6);
+    --base-d-700: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.7);
+    --base-d-700: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.7);
+    --base-d-800: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.8);
+    --base-d-800: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.8);
+    --base-d-900: var(--base-h) var(--base-s) calc(var(--base-l) - var(--base-l) * 0.9);
+
+    /*== Base Lighten ==*/
+    --base-l-100: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.1);
+    --base-l-200: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.2);
+    --base-l-300: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.3);
+    --base-l-400: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.4);
+    --base-l-500: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.5);
+    --base-l-600: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.6);
+    --base-l-700: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.7);
+    --base-l-800: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.8);
+    --base-l-900: var(--base-h) calc(var(--base-s)) calc(var(--base-l) + (100% - var(--base-l)) * 0.9);
+
+    --background-gradient: linear-gradient(45deg, hsl(var( --base)), hsl(var(--base-two)));
+
+    /*========================= Base Two Color =============================*/ 
+    --base-two-h: 39;
+    --base-two-s: 83%;
+    --base-two-l: 67%;
+    --base-two: var(--base-two-h) var(--base-two-s) var(--base-two-l);
+
+      /*== Base Two Darken ==*/
+     --base-two-d-100: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.05);
+     --base-two-d-200: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.1);
+     --base-two-d-300: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.2);
+     --base-two-d-400: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.3);
+     --base-two-d-500: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.4);
+     --base-two-d-600: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.5);
+     --base-two-d-700: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.6);
+     --base-two-d-800: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.7);
+     --base-two-d-900: var(--base-two-h) var(--base-two-s) calc(var(--base-two-l) - var(--base-two-l) * 0.8);
+ 
+    /*=== Base Two Lighten ===*/
+     --base-two-l-100: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.05);
+     --base-two-l-200: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.1);
+     --base-two-l-300: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.2);
+     --base-two-l-400: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.3);
+     --base-two-l-500: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.4);
+     --base-two-l-600: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.5);
+     --base-two-l-700: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.6);
+     --base-two-l-800: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.7);
+     --base-two-l-900: var(--base-two-h) calc(var(--base-two-s)) calc(var(--base-two-l) + (100% - var(--base-two-l)) * 0.8);
+   
+    /*=== Dark Color ===*/
+    --dark-h: 0;
+    --dark-s: 0%;
+    --dark-l: 8%;
+    --dark: var(--dark-h) var(--dark-s) var(--dark-l);
+
+    --dark-d-100: var(--dark-h) var(--dark-s) calc(var(--dark-l) - var(--dark-l) * 0.1);
+    --dark-d-200: var(--dark-h) var(--dark-s) calc(var(--dark-l) - var(--dark-l) * 0.2);
+    --dark-d-300: var(--dark-h) var(--dark-s) calc(var(--dark-l) - var(--dark-l) * 0.3);
+    --dark-d-400: var(--dark-h) var(--dark-s) calc(var(--dark-l) - var(--dark-l) * 0.4);
+    --dark-d-500: var(--dark-h) var(--dark-s) calc(var(--dark-l) - var(--dark-l) * 0.5);
+    --dark-d-600: var(--dark-h) var(--dark-s) calc(var(--dark-l) - var(--dark-l) * 0.6);
+    --dark-l-100: var(--dark-h) calc(var(--dark-s)) calc(var(--dark-l) + (100% - var(--dark-l)) * 0.1);
+    --dark-l-200: var(--dark-h) calc(var(--dark-s)) calc(var(--dark-l) + (100% - var(--dark-l)) * 0.2);
+    --dark-l-300: var(--dark-h) calc(var(--dark-s)) calc(var(--dark-l) + (100% - var(--dark-l)) * 0.3);
+    --dark-l-400: var(--dark-h) calc(var(--dark-s)) calc(var(--dark-l) + (100% - var(--dark-l)) * 0.4);
+    --dark-l-500: var(--dark-h) calc(var(--dark-s)) calc(var(--dark-l) + (100% - var(--dark-l)) * 0.5);
+    --dark-l-600: var(--dark-h) calc(var(--dark-s)) calc(var(--dark-l) + (100% - var(--dark-l)) * 0.6);
+
+    /*========================= Bootstrap Modifier Start ========================*/
+    // Primary Color
+    --primary-h: 211;
+    --primary-s: 100%;
+    --primary-l: 50%;
+    --primary: var(--primary-h) var(--primary-s) var(--primary-l);
+    /*=== Primary Darken ===*/
+    --primary-d-100: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.1);
+    --primary-d-200: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.2);
+    --primary-d-300: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.3);
+    --primary-d-400: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.4);
+    --primary-d-500: var(--primary-h) var(--primary-s) calc(var(--primary-l) - var(--primary-l) * 0.5);
+    /*=== primary Lighten ===*/
+    --primary-l-100: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.1);
+    --primary-l-200: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.2);
+    --primary-l-300: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.3);
+    --primary-l-400: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.4);
+    --primary-l-500: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.5);
+    --primary-l-600: var(--primary-h) calc(var(--primary-s)) calc(var(--primary-l) + (100% - var(--primary-l)) * 0.6);
+
+    /*=== Secondary Color ===*/
+    --secondary-h: 210;
+    --secondary-s: 11%;
+    --secondary-l: 71%;
+    --secondary: var(--secondary-h) var(--secondary-s) var(--secondary-l);
+    /*=== Secondary Darken ===*/
+    --secondary-d-100: var(--secondary-h) var(--secondary-s) calc(var(--secondary-l) - var(--secondary-l) * 0.1);
+    --secondary-d-200: var(--secondary-h) var(--secondary-s) calc(var(--secondary-l) - var(--secondary-l) * 0.2);
+    --secondary-d-300: var(--secondary-h) var(--secondary-s) calc(var(--secondary-l) - var(--secondary-l) * 0.3);
+    --secondary-d-400: var(--secondary-h) var(--secondary-s) calc(var(--secondary-l) - var(--secondary-l) * 0.4);
+    --secondary-d-500: var(--secondary-h) var(--secondary-s) calc(var(--secondary-l) - var(--secondary-l) * 0.5);   
+    /*=== secondary Lighten ===*/
+    --secondary-l-100: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.1);
+    --secondary-l-200: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.2);
+    --secondary-l-300: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.3);
+    --secondary-l-400: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.4);
+    --secondary-l-500: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.5);
+    --secondary-l-600: var(--secondary-h) calc(var(--secondary-s)) calc(var(--secondary-l) + (100% - var(--secondary-l)) * 0.6);
+
+    /*=== Success Color ===*/
+    --success-h: 115;
+    --success-s: 100%;
+    --success-l: 47%;
+    --success: var(--success-h) var(--success-s) var(--success-l);
+    /*=== Success Darken ===*/
+    --success-d-100: var(--success-h) var(--success-s) calc(var(--success-l) - var(--success-l) * 0.1);
+    --success-d-200: var(--success-h) var(--success-s) calc(var(--success-l) - var(--success-l) * 0.2);
+    --success-d-300: var(--success-h) var(--success-s) calc(var(--success-l) - var(--success-l) * 0.3);
+    --success-d-400: var(--success-h) var(--success-s) calc(var(--success-l) - var(--success-l) * 0.4);
+    --success-d-500: var(--success-h) var(--success-s) calc(var(--success-l) - var(--success-l) * 0.5);
+    /*=== Success Lighten ===*/
+    --success-l-100: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.1);
+    --success-l-200: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.2);
+    --success-l-300: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.3);
+    --success-l-400: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.4);
+    --success-l-500: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.5);
+    --success-l-600: var(--success-h) calc(var(--success-s)) calc(var(--success-l) + (100% - var(--success-l)) * 0.6);
+
+    /*=== Danger Color ==*/
+    --danger-h: 0;
+    --danger-s: 96%;
+    --danger-l: 63%;
+    --danger: var(--danger-h) var(--danger-s) var(--danger-l);
+    /*=== Danger Darken ===*/
+    --danger-d-100: var(--danger-h) var(--danger-s) calc(var(--danger-l) - var(--danger-l) * 0.1);
+    --danger-d-200: var(--danger-h) var(--danger-s) calc(var(--danger-l) - var(--danger-l) * 0.2);
+    --danger-d-300: var(--danger-h) var(--danger-s) calc(var(--danger-l) - var(--danger-l) * 0.3);
+    --danger-d-400: var(--danger-h) var(--danger-s) calc(var(--danger-l) - var(--danger-l) * 0.4);
+    --danger-d-500: var(--danger-h) var(--danger-s) calc(var(--danger-l) - var(--danger-l) * 0.5);
+    /*=== danger Lighten ===*/
+    --danger-l-100: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.1);
+    --danger-l-200: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.2);
+    --danger-l-300: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.3);
+    --danger-l-400: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.4);
+    --danger-l-500: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.5);
+    --danger-l-600: var(--danger-h) calc(var(--danger-s)) calc(var(--danger-l) + (100% - var(--danger-l)) * 0.6);
+
+    /*=== Warning Color ===*/
+    --warning-h: 29;
+    --warning-s: 88%;
+    --warning-l: 59%;
+    --warning: var(--warning-h) var(--warning-s) var(--warning-l);
+    /*=== Warning Darken ===*/
+    --warning-d-100: var(--warning-h) var(--warning-s) calc(var(--warning-l) - var(--warning-l) * 0.1);
+    --warning-d-200: var(--warning-h) var(--warning-s) calc(var(--warning-l) - var(--warning-l) * 0.2);
+    --warning-d-300: var(--warning-h) var(--warning-s) calc(var(--warning-l) - var(--warning-l) * 0.3);
+    --warning-d-400: var(--warning-h) var(--warning-s) calc(var(--warning-l) - var(--warning-l) * 0.4);
+    --warning-d-500: var(--warning-h) var(--warning-s) calc(var(--warning-l) - var(--warning-l) * 0.5);
+    /*===  Warning Lighten ===*/
+    --warning-l-100: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.1);
+    --warning-l-200: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.2);
+    --warning-l-300: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.3);
+    --warning-l-400: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.4);
+    --warning-l-500: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.5);
+    --warning-l-600: var(--warning-h) calc(var(--warning-s)) calc(var(--warning-l) + (100% - var(--warning-l)) * 0.6);
+
+    /*=== Info Color ===*/
+    --info-h: 196;
+    --info-s: 100%;
+    --info-l: 50%;
+    --info: var(--info-h) var(--info-s) var(--info-l);
+    /*=== Info Darken ===*/ 
+    --info-d-100: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.1);
+    --info-d-200: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.2);
+    --info-d-300: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.3);
+    --info-d-400: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.4);
+    --info-d-500: var(--info-h) var(--info-s) calc(var(--info-l) - var(--info-l) * 0.5);
+    /*=== nfo Lighten ===*/
+    --info-l-100: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.1);
+    --info-l-200: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.2);
+    --info-l-300: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.3);
+    --info-l-400: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.4);
+    --info-l-500: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.5);
+    --info-l-600: var(--info-h) calc(var(--info-s)) calc(var(--info-l) + (100% - var(--info-l)) * 0.6);
+
+    /*=== Violet Color ===*/
+    --violet-h: 251;
+    --violet-s: 96%;
+    --violet-l: 63%;
+    --violet: var(--violet-h) var(--violet-s) var(--violet-l);
+    /*=== Violet Darken ===*/ 
+    --violet-d-100: var(--violet-h) var(--violet-s) calc(var(--violet-l) - var(--violet-l) * 0.1);
+    --violet-d-200: var(--violet-h) var(--violet-s) calc(var(--violet-l) - var(--violet-l) * 0.2);
+    --violet-d-300: var(--violet-h) var(--violet-s) calc(var(--violet-l) - var(--violet-l) * 0.3);
+    --violet-d-400: var(--violet-h) var(--violet-s) calc(var(--violet-l) - var(--violet-l) * 0.4);
+    --violet-d-500: var(--violet-h) var(--violet-s) calc(var(--violet-l) - var(--violet-l) * 0.5);
+    /*=== Violet Lighten ===*/
+    --violet-l-100: var(--violet-h) calc(var(--violet-s)) calc(var(--violet-l) + (100% - var(--violet-l)) * 0.1);
+    --violet-l-200: var(--violet-h) calc(var(--violet-s)) calc(var(--violet-l) + (100% - var(--violet-l)) * 0.2);
+    --violet-l-300: var(--violet-h) calc(var(--violet-s)) calc(var(--violet-l) + (100% - var(--violet-l)) * 0.3);
+    --violet-l-400: var(--violet-h) calc(var(--violet-s)) calc(var(--violet-l) + (100% - var(--violet-l)) * 0.4);
+    --violet-l-500: var(--violet-h) calc(var(--violet-s)) calc(var(--violet-l) + (100% - var(--violet-l)) * 0.5);
+    --violet-l-600: var(--violet-h) calc(var(--violet-s)) calc(var(--violet-l) + (100% - var(--violet-l)) * 0.6);
+
+   /*=== Yellow Color ===*/
+    --yellow-h: 50;
+    --yellow-s: 100%;
+    --yellow-l: 50%;
+    --yellow: var(--yellow-h) var(--yellow-s) var(--yellow-l);
+    /*=== Yellow Darken ===*/ 
+    --yellow-d-100: var(--yellow-h) var(--yellow-s) calc(var(--yellow-l) - var(--yellow-l) * 0.1);
+    --yellow-d-200: var(--yellow-h) var(--yellow-s) calc(var(--yellow-l) - var(--yellow-l) * 0.2);
+    --yellow-d-300: var(--yellow-h) var(--yellow-s) calc(var(--yellow-l) - var(--yellow-l) * 0.3);
+    --yellow-d-400: var(--yellow-h) var(--yellow-s) calc(var(--yellow-l) - var(--yellow-l) * 0.4);
+    --yellow-d-500: var(--yellow-h) var(--yellow-s) calc(var(--yellow-l) - var(--yellow-l) * 0.5);
+    /*=== yellow Lighten ===*/
+    --yellow-l-100: var(--yellow-h) calc(var(--yellow-s)) calc(var(--yellow-l) + (100% - var(--yellow-l)) * 0.1);
+    --yellow-l-200: var(--yellow-h) calc(var(--yellow-s)) calc(var(--yellow-l) + (100% - var(--yellow-l)) * 0.2);
+    --yellow-l-300: var(--yellow-h) calc(var(--yellow-s)) calc(var(--yellow-l) + (100% - var(--yellow-l)) * 0.3);
+    --yellow-l-400: var(--yellow-h) calc(var(--yellow-s)) calc(var(--yellow-l) + (100% - var(--yellow-l)) * 0.4);
+    --yellow-l-500: var(--yellow-h) calc(var(--yellow-s)) calc(var(--yellow-l) + (100% - var(--yellow-l)) * 0.5);
+    --yellow-l-600: var(--yellow-h) calc(var(--yellow-s)) calc(var(--yellow-l) + (100% - var(--yellow-l)) * 0.6);
+    /*======================= Bootstrap Modifier End ==============================*/
+  }::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px hsl(var(--base)/.2); 
+    
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--base)/.5); 
+    
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--base)); 
+  }
+
+   /*==================== Color Variables End =====================*/
+//base-radius
+  .base-radius{
+    border-radius: 20px;
+  }
+// Mixin
+@mixin fit-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+}
+
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin flex-align {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@mixin flex-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+//Mobile Landscape
+@mixin landscape {
+  @media all and (orientation:landscape) {
+    @content;
+  }
+}
+
+//Mobile Potrait
+@mixin potrait {
+  @media all and (orientation:potrait) {
+    @content;
+  }
+}
+  
+//Extra Extra Small Screen
+@mixin xxsm-screen {
+  @media screen and (max-width: 374px) {
+    @content;
+  }
+}
+
+// Xtra Small
+@mixin xsm-screen {
+  @media screen and (max-width: 424px) {
+    @content;
+  }
+}
+// Medium Small Screen (max-width: 575)
+@mixin msm-screen {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
+
+//Small Screen (max-width: 767)
+@mixin sm-screen {
+  @media screen and (max-width: 770px) {
+    @content;
+  }
+}
+
+//Large Screen (max-width: 991)
+@mixin md-screen {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin slg-screen {
+  @media screen and (max-width: 1025px) {
+    @content;
+  }
+}
+
+//Xtra Large Screen (max-width: 1199)
+@mixin lg-screen {
+  @media screen and (max-width: 1199px) {
+    @content;
+  }
+}
+
+//Xtra Large Screen i (max-width: 1399)
+@mixin xl-screen {
+  @media screen and (max-width: 1399px) {
+    @content;
+  }
+}
+
+//Xtra Large Screen ii (max-width: 1499)
+@mixin xxl-screen {
+  @media screen and (max-width: 1499px) {
+    @content;
+  }
+}
+//Xtra Large Screen ii (max-width: 1599)
+@mixin xxxl-screen {
+  @media screen and (max-width: 1599px) {
+    @content;
+  }
+}
+
+
+// padding
+.py-115 {
+  padding-top: 115px;
+  padding-bottom: 115px;
+  @media (max-width: 576px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  @media (max-width: 1399px) {
+    padding-top: 80px ;
+    padding-bottom: 80px ;
+  }
+}
+
+.py-155 {
+  padding-top: 155px;
+  padding-bottom: 155px;
+  @media (max-width: 1399px) {
+    padding-top: 90px ;
+    padding-bottom: 90px ;
+  }
+  @media (max-width: 576px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+ 
+}
+
+
+.pb-115 {
+  padding-bottom: 115px;
+  @media (max-width: 576px) {
+    padding-bottom: 70px;
+  }
+  @media (max-width: 1399px) {
+    padding-bottom: 80px ;
+  }
+}
+
+.pb-40 {
+  padding-bottom: 40px;
+  @media (max-width: 576px) {
+    padding-bottom: 30px;
+  }
+  @media (max-width: 1399px) {
+    padding-bottom: 30px ;
+  }
+}
+
+.py-40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @media (max-width: 1399px) {
+    padding-top: 30px ;
+    padding-bottom: 30px ;
+  }
+  @media (max-width: 576px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
+
+.pt-120 {
+    padding-top: 120px;
+    @media (max-width: 992px) {
+      padding-top: 100px;
+    }
+    @media (max-width: 576px) {
+    padding-top: 80px;
+  }
+    
+}
+.py-80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  @media (max-width: 992px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 576px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+ 
+}
+.py--80 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @media (max-width: 576px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media (max-width: 992px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.pt-80 {
+  padding-top: 80px;
+  @media (max-width: 992px) {
+    padding-top: 60px;
+  }
+  @media (max-width: 576px) {
+  padding-top: 50px;
+  }
+    
+}
+.pt-40 {
+  padding-bottom: 40px;
+  @media (max-width: 992px) {
+    padding-bottom: 30px;
+    }
+  @media (max-width: 576px) {
+  padding-bottom: 30px;
+  }
+}
+.pb-80 {
+  padding-bottom: 40px;
+  @media (max-width: 992px) {
+    padding-bottom: 40px;
+  }
+  @media (max-width: 576px) {
+  padding-bottom: 40px;
+  }
+    
+}
+.pb-100 {
+  padding-bottom: 50px;
+  @media (max-width: 576px) {
+  padding-bottom: 80px;
+  }
+    @media (max-width: 992px) {
+    padding-bottom: 100px;
+  }
+}
+
+.py-60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+     @media (max-width: 992px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+    @media (max-width: 576px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+.pt-60 {
+    padding-top: 30px;
+    @media (max-width: 576px) {
+    padding-top: 40px;
+  }
+    @media (max-width: 992px) {
+    padding-top: 60px;
+  }
+}
+.pt-40 {
+  padding-top: 30px;
+    @media (max-width: 576px) {
+      padding-top: 35px;
+  }
+    @media (max-width: 992px) {
+      padding-top: 40px;
+  }
+}
+  .pb-60 {
+    padding-bottom: 60px;
+    @media (max-width: 576px) {
+    padding-bottom: 40px;
+  }
+    @media (max-width: 992px) {
+    padding-bottom: 50px;
+  }
+}
+  .pb-30 {
+    padding-bottom: 20px;
+    @media (max-width: 576px) {
+    padding-bottom: 25px;
+  }
+    @media (max-width: 992px) {
+    padding-bottom: 30px;
+  }
+}
+
+// ========================= Padding Md 60 Bottom =========================== 
+.pt-md-60 {
+     padding-top: 60px;
+     @media (max-width: 576px) {
+       padding-top: 80px;
+     }
+     @media (max-width: 992px) {
+       padding-top: 60px;
+     }
+}
+  .pb-md-60 {
+    padding-bottom: 60px;
+    @media (max-width: 576px) {
+      padding-bottom: 80px;
+    }
+    @media (max-width: 992px) {
+      padding-bottom: 60px;
+    }
+}
+
+// margin
+
+.my-120 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @media (min-width: 992px) {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+}
+.mt-120 {
+  margin-top: 60px;
+  @media (min-width: 992px) {
+    margin-top: 120px;
+  }
+}
+.mb-120 {
+  margin-bottom: 60px;
+  @media (min-width: 992px) {
+    margin-bottom: 120px;
+  }
+}
+
+.my-60 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @media (min-width: 992px) {
+    margin-top: 120px;
+    margin-bottom: 60px;
+  }
+}
+.mt-60 {
+  margin-top: 30px;
+  @media (min-width: 992px) {
+    margin-top: 60px;
+  }
+}
+.mb-60 {
+  margin-bottom: 30px;
+  @media (min-width: 992px) {
+    margin-bottom: 60px;
+  }
+}
+
+
+.my-80 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  @media (min-width: 992px) {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  }
+}
+.mt-80{
+margin-top: 40px;
+  @media (min-width: 992px) {
+  margin-top: 80px;
+  }
+}
+.mb-80{
+margin-bottom: 40px;
+  @media (min-width: 992px) {
+  margin-bottom: 80px;
+  }
+}
+.my-40 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  @media (min-width: 992px) {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  }
+}
+.mt-40 {
+margin-top: 30px;
+  @media (min-width: 992px) {
+  margin-top: 40px;
+  }
+}
+.mb-40 {
+margin-bottom: 30px;
+@media (min-width: 992px) {
+margin-bottom: 40px;
+  }
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+  @media (max-width: 992px) {
+  margin-bottom: 10px;
+    }
+  }
+
+// text-color
+
+/*====================== Color Variable ====================*/
+.text--base {
+  color: hsl(var(--base)) !important;
+}
+.text--primary {
+  color: hsl(var(--primary)) !important;;
+}
+.text--secondary {
+  color: hsl(var(--secondary)) !important;;
+}
+.text--success {
+  color: hsl(var(--success)) !important;;
+}
+.text--danger {
+  color: hsl(var(--danger)) !important;;
+}
+.text--warning {
+  color: hsl(var(--warning)) !important;;
+}
+.text--info {
+  color: hsl(var(--info)) !important;;
+}
+.text--violet {
+  color: hsl(var(--violet)) !important;;
+}
+
+/*====================== Border Color ====================*/
+.border--base {
+  border-color: hsl(var(--base)) !important;
+}
+.border--primary {
+  border-color: hsl(var(--primary)) !important;
+}
+.border--secondary {
+  border-color: hsl(var(--secondary)) !important;
+}
+.border--success {
+  border-color: hsl(var(--success)) !important;
+}
+.border--danger {
+  border-color: hsl(var(--danger)) !important;
+}
+.border--warning {
+  border-color: hsl(var(--warning)) !important;
+}
+.border--info {
+  border-color: hsl(var(--info)) !important;
+}
+.border--violet {
+  border-color: hsl(var(--violet)) !important;
+}
+
+/*====================== Bg Variable ====================*/
+.bg--white {
+  background-color: hsl(var(--white)) !important;
+}
+.bg--base {
+  background-color: hsl(var(--base)) !important;
+}
+.bg--primary {
+  background-color: hsl(var(--primary)) !important;
+}
+.bg--secondary {
+  background-color: hsl(var(--secondary)) !important;
+}
+.bg--success {
+  background-color: hsl(var(--success)) !important;
+}
+.bg--danger {
+  background-color: hsl(var(--danger)) !important;
+}
+.bg--warning {
+  background-color: hsl(var(--warning)) !important;
+}
+.bg--info {
+  background-color: hsl(var(--info)) !important;
+}
+.bg--violet {
+  background-color: hsl(var(--violet)) !important;
+}
+
+.section-bg {
+  background-color: hsl(var(--base) / 0.05);
+}
+
+
+/*====================== Section Heading ====================*/
+.section-heading {
+  margin-bottom: 50px;
+  position: relative; 
+  @include xxsm-screen {
+    margin-bottom: 30px;
+  }
+  .section-title-top {
+    font-size: 26px;
+    display: inline-block;
+    font-weight: 700;
+    position: relative;
+    color: hsl(var(--white));
+    z-index: 1;
+    margin: 5px 0px  20px 20px;
+    &::before {
+      position: absolute;
+      left: -9px;
+      top: -6px;
+      height: 50px;
+      width: 50px;
+      background: hsl(var(--base));
+      content: "";
+      z-index: -1;
+      border-radius: 25px 10px 25px 10px;
+    }
+  }
+  
+  .subtitle {
+    font-size: 20px;
+    font-weight: 800;
+    color: hsl(var(--base));
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: capitalize;
+    position: relative;
+    .animate-shape { 
+      position: relative;
+      width: 70%;
+      top: 0;
+      position: absolute;
+      left: 0;
+      @include sm-screen {
+        width: 65%;
+      }
+      img {  
+        position: absolute;
+        top: 35px;
+        left: 0;
+        z-index: -1;
+        -webkit-animation: section-animation 3s infinite;
+        animation: section-animation 3s infinite;
+        @include sm-screen {
+            top: 19px;
+        }
+      }
+      &.center {
+        left: 37%;
+        width: 50%;
+      }
+  }
+    
+    @include sm-screen {
+      font-size: 28px;
+    }
+    @include xxsm-screen {
+      font-size: 25px;
+    }
+  }
+  &__desc {
+    max-width: 750px;
+    left: 0px;
+  }
+
+}
+.item-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: hsl(var(--black)/0.8);
+}
+
+.text-center .section-heading__subtitle-big {
+  right: 0;
+}
+.text-center .section-heading__desc {
+   margin: auto;
+}
+// ====================== Section Heading End====================
+
+//================= Slick Arrow & Dots css Start ================
+.slick-initialized.slick-slider {
+  margin: 0 -10px;
+  .slick-track {
+      display: flex;
+  }
+  .slick-slide {
+      height: auto;
+      padding: 0 10px;
+      > div {
+          height: 100%;
+      }
+  }
+}
+
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  color: hsl(var(--white));;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: .2s linear; 
+  background-color: hsl(var(--base / 0.1));
+  color: hsl(var(--white));;
+  font-size: 20px;
+  @include md-screen {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+  @include msm-screen {
+    width: 45px;
+    height: 45px;
+  }
+   &:hover {
+    border-color: hsl(var(--base));
+    background-color: hsl(var(--base-two));
+  }
+}
+.slick-next {
+  right: 0px;
+  @include md-screen {
+    right: -10px;
+  }
+  @include msm-screen {
+    right: 10px;
+  }
+}
+.slick-prev {
+  left: 0px;
+  @include md-screen {
+    left: -10px;
+  }
+  @include msm-screen {
+    left: 10px;
+  }
+}
+.slick-slide img {
+  display: inline-block;
+}
+// -------------- Style two ------------
+.slick-arrow {
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  color: hsl(var(--white));;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: .4s;
+  background-color:  hsl(var(--base));
+  color: hsl(var(--white));
+  @include lg-screen {
+    // top: -69px;
+  }
+  @include sm-screen {
+    top: auto; 
+    bottom: -50px;
+    right: 50%;
+  }
+}
+.slick-arrow:hover {
+  background-color: hsl(var(--dark));
+  color: hsl(var(--white));;
+}
+.slick-next {
+  right: 0px;
+  background-color:  hsl(var(--base));
+  @include sm-screen {
+    top: auto; 
+    right: calc(50% + -37px);
+
+  } 
+}
+.slick-prev {
+  right: 0px;
+  @include sm-screen {
+    top: auto; 
+    right: calc(50% - -5px);
+  }
+}
+
+//  Dots
+.slick-dots {
+    text-align: center;
+    padding-top: 36px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    li {
+        display: inline-block;
+        button {
+            border: none;
+            background-color: hsl(var(--base)/.2);;
+            color: hsl(var(--white));
+            margin: 0 10px;
+            width: 18px;
+            height: 18px;
+            border-radius: 1px;
+            text-indent: -9999px;
+            transform: rotate(45deg);
+        }
+        &.slick-active button {
+            background-color: hsl(var(--base));
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+//================= Slick Arrow & Dots css Start ================
+
+
+/*================= Text Underline Hover ================*/
+.text-hover a {
+  background-image: linear-gradient(to right, hsl(var(--base)) 0%, hsl(var(--base)) 100%);
+  background-position: 0 calc(100% - 0.02em);
+  background-size: 0 2px;
+  transition: background-size 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+  padding: 0;
+  display: inline;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+.text-hover a:hover {
+  background-size: 100% 2px;
+}
+
+/*========== Magnific Popup button style ========*/
+button.mfp-close {
+  top: -15px;
+  font-size: 21px;
+  font-weight: 800;
+  height: 35px;
+  background: hsl(var(--base));
+  line-height: 32px;
+  padding: 0;
+  opacity: 1;
+  border-radius: 5px;
+}
+.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+  color:  hsl(var(--white));
+  right: 0px;
+  text-align: right;
+  padding-right: 13px;
+  width: 42px;
+}
+
+.cookies-card {
+  position: fixed;
+  bottom: 16px;
+  width: 40%;
+  padding: 20px;
+  background: hsl(var(--white));
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  right: 16px;
+  z-index: 99;
+  border: 2px solid hsl(var(--base));
+}
+
+//* 
+// 32. Newsletter popup css
+// */   
+/* ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+// typography
+
+
+
+body{
+  // font-family: var(--heading-font);
+  // color: hsl(var(--body-color));
+  // word-break: break-word;
+  // background-color: hsl(var(--body-background));
+  // min-height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+
+  font-family: var(--heading-font);
+  color: hsl(var(--body-color));
+  word-break: break-word;
+  background-color: hsl(var(--background));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+p{
+  font-family: var(--body-font);
+  font-size: 17px;
+  margin: 0 !important;
+  font-weight: 400;
+  word-break: break-word;
+  color: hsl(var(--body-color));
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 15px 0;
+  font-family: var(--heading-font);
+  color: hsl(var(--heading-color));
+  line-height: 1.1;
+  word-break: break-word;
+  @include sm-screen {
+    margin: 0 0 10px 0;
+  }
+}
+h1 {
+  font-size: var(--heading-one) !important;
+  font-weight: 700 !important;
+}
+h2 {
+  font-size: var(--heading-two) !important;
+  font-weight: 600 !important;
+  margin: 0px !important;
+}
+h3 {
+  font-size: var(--heading-three) !important;
+  font-weight: 500 !important;
+}
+h4 {
+  font-size: var(--heading-four) !important;
+  font-weight: 500 !important;
+}
+h5 {
+
+  font-size: var(--heading-five) !important;
+  font-weight: 500 !important;
+}
+h6 {
+  font-size: 20px;
+  font-weight: 500;
+  @media (max-width: 1399px) {
+    font-size: 14px !important;
+  }
+}
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+  font-weight: 400;
+  transition: .2s linear;
+  line-height: 1.4;
+  word-break: break-word;
+  color: hsl(var(--heading-color));
+  
+}
+
+a{
+  // display: inline-block;
+  transition: .2s linear;
+  text-decoration: none !important;
+  color: hsl(var(--body-color));
+}
+
+a:hover {
+  color: hsl(var(--base));
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+select {
+  cursor: pointer;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+*:focus {
+  outline: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+.form-select:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+
+
+/************ animate style ************/
+
+// 
+@-webkit-keyframes slideUp {
+  from {
+      background-position: 0 0;
+  }
+
+  to {
+      background-position: 0% 1000%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+      background-position: 0 0;
+  }
+
+  to {
+      background-position: 0% 1000%;
+  }
+}
+
+
+
+
+
+.top_image_bounce {
+  -webkit-animation: top-image-bounce 3s infinite ease-in-out;
+          animation: top-image-bounce 3s infinite ease-in-out;
+}
+
+.top_image_bounce_2 {
+  -webkit-animation: top-image-bounce-2 6s infinite ease-in-out;
+          animation: top-image-bounce-2 6s infinite ease-in-out;
+}
+
+.left_image_bounce {
+  -webkit-animation: left-image-bounce 3s infinite ease-in-out;
+          animation: left-image-bounce 3s infinite ease-in-out;
+}
+.left_image_bounce-1 {
+  -webkit-animation: left-image-bounce 6s infinite ease-in-out;
+          animation: left-image-bounce 6s infinite ease-in-out;
+}
+
+.right_image_bounce {
+  -webkit-animation: right-image-bounce 3s infinite ease-in-out;
+          animation: right-image-bounce 3s infinite ease-in-out;
+}
+
+.spin_image {
+  -webkit-animation: spin 3s infinite ease-in-out;
+          animation: spin 3s infinite ease-in-out;
+}
+
+@keyframes top-image-bounce {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes top-image-bounce {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+  50% {
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+  }
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+@keyframes top-image-bounce-2 {
+  0% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  50% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+  100% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+}
+@keyframes top-image-bounce-2 {
+  0% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+  50% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+  100% {
+    -webkit-transform: translateY(54x);
+    transform: translateY(-4px);
+  }
+}
+@keyframes left-image-bounce {
+  0% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+}
+@keyframes left-image-bounce {
+  0% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+  }
+}
+@-webkit-keyframes ripple-white3 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 100px rgba(255, 255, 255, 0);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 100px rgba(255, 255, 255, 0);
+  }
+}
+@keyframes ripple-white3 {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 100px rgba(255, 255, 255, 0);
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 100px rgba(255, 255, 255, 0);
+  }
+}
+
+
+
+
+
+
+
+

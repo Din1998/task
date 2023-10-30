@@ -1,0 +1,64 @@
+// testimonial card
+.testimonial-card{
+  border-radius: 8px;
+  background: hsl(var(--black)/0.1);
+  padding: 60px 24px;
+  .content{
+    p{
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 34px;
+      text-align: center;
+    }
+  }
+  .user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-top: 40px;
+    .user-thumb{
+      position: relative;
+     .tag{
+      border: 2px solid hsl(var(--black));
+      position: absolute;
+      top: 0;
+      right: -6px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: hsl(var(--black));
+      background: hsl(var(--base));
+     }
+    }
+    .user-description{
+      .user-name{
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.27;
+        margin: 10px;
+      }
+      .user-title{
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+    .rating{
+      i{
+        color: hsl(var(--yellow));
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+.carousel-item-padding{
+  padding-right: 16px;
+}

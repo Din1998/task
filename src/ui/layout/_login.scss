@@ -1,0 +1,32 @@
+// log in
+.login{
+  padding: 20px 0px;
+  .welcome-text{
+    margin-bottom: 40px;
+  }
+    .login-meta{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+    align-items: center;
+    gap: 12px;
+    p{
+      font-size: 14px;
+    }
+  }
+}
+
+.log-in-box{
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+@media(max-width:376px){
+  .log-in-box{
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+}

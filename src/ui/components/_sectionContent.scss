@@ -1,0 +1,21 @@
+.section-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 40px 0px;
+    .title-btm-border{
+    width: 180px;
+    height: 8px;
+    border: 4px solid hsl(var(--base));
+    background: hsl(var(--base));
+    }
+    
+}
+
+
+@media(max-width:376px){
+    .section-content{
+        margin: 20px 0px 40px 0px;
+    }
+}

@@ -1,0 +1,26 @@
+/*================== Tab Content =============*/
+
+.coustome-tabs{
+    border-color: hsl(var(--base));
+     li{
+         .nav-link{
+             color: hsl(var(--black));
+             border-radius: 4px 4px 0px 0px;
+             @include lg-screen {
+                 padding: 8px 8px !important;
+             }
+            
+         }:hover{
+             border-color: hsl(var(--base)) !important;
+         }
+     }
+     .active{
+         color:  hsl(var(--base)) !important;
+         border-color: hsl(var(--base)) hsl(var(--base)) hsl(var(--white)) !important;
+     }
+     
+ }
+
+ .nav-tabs {
+    border-bottom: 1px solid hsl(var(--base)) !important;
+}

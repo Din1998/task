@@ -1,0 +1,53 @@
+// get in touch
+.get-in-touch-box{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: rgba(255, 255, 255, 0.09);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(2.3px);
+  -webkit-backdrop-filter: blur(2.3px);
+  height: 564px;
+  .info-item{
+    p{
+      a{
+        color: hsl(var(--black)/.6);
+        &:hover {
+          color: hsl(var(--base));
+        }
+      }
+    }
+    .title{
+      color: hsl(var(--base)) !important;
+    }
+  }
+
+  .social-item{
+    .social-title{
+      margin: 0px 0px 8px 0px;
+    }
+  }
+}
+
+
+
+.get-in-touch{
+  position: relative;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.get-in-touch-thumb{
+  position: absolute;
+  z-index: -9;
+  img{
+    opacity: 0.03;
+  }
+}
+
+@media(max-width:769px){
+  .get-in-touch-box{
+    height: 100%;
+  }
+}
